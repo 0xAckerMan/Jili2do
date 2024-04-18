@@ -1,0 +1,30 @@
+{
+  "name": "jili2do",
+  "version": "1.0.0",
+  "description": "Manage all your tasks like an og",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xAckerMan/Jili2do.git"
+  },
+  "author": "joelkores",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0xAckerMan/Jili2do/issues"
+  },
+  "homepage": "https://github.com/0xAckerMan/Jili2do#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.7",
+    "prisma": "^5.12.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
