@@ -6,5 +6,5 @@ export const Healthcheck = (req: Request, res: Response) => {
         "version": "1.0.0"
     }
 
-    res.json({"Healthcheck": status})
+    res.json({"healthcheck": status})
 }
