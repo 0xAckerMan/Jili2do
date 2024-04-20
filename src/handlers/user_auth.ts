@@ -62,3 +62,15 @@ export const Signin = async (req: Request, res: Response)=>{
         res.status(500).json("internal server error")
     }
 }
+
+export const Signout = async (req: Request, res: Response)=>{
+    try{
+        //destroy the token
+        
+        res.status(200).json({message: "signout successful"})
+    }
+    catch(e){
+        console.log("error signing out user", e)
+        res.status(500).json("internal server error")
+    }
+}
