@@ -122,3 +122,28 @@ export const DeleteTask = async (req: Request, res: Response) => {
         return res.status(500).json({"error": "The server is experiencing an error"})
     }
 }
+
+export const markTaskDone = async (req: Request, res: Response) => {
+    try{
+        const user: User = req.user as User
+
+        const task:Task = await prisma.task.update({
+            where: {
+                id: parseInt(req.params.id, 10),
+                ownerId: user.id
+            },
+            data: {
+                completed: true
+            }
+        })
+
+        if(!task){
+            return res.status(404).json({error: "task not found"})
+        }
+
+        return res.status(200).json({"task": task})
+    } catch(e) {
+        console.log("Error marking task completed ", e)
+        return res.status(500).json("Internal server error")
+    }
+}
